@@ -1,0 +1,26 @@
+name: ${project.name}
+version: ${project.version}
+main: com.i0dev.ancientruins.AncientRuinsPlugin
+website: ${project.url}
+authors: [ i01 ]
+depend: [ MassiveCore ]
+description: ${project.description}
+api-version: 1.19
+permissions:
+  ancientruins.basecommand: { description: ancientruins basecommand, default: false }
+  ancientruins.version: { description: check version, default: false }
+  ancientruins.*:
+    ancientruins.basecommand: true
+    ancientruins.version: true
+  ancientruins.kit.op:
+    default: op
+    children:
+      ancientruins.*: true
+  ancientruins.kit.rank0:
+    default: false
+    children:
+      ancientruins.basecommand: true
+  ancientruins.kit.default:
+    default: true
+    children:
+      ancientruins.kit.rank0: true
