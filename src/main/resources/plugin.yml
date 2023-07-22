@@ -5,7 +5,7 @@ website: ${project.url}
 authors: [ i01 ]
 depend: [ MassiveCore ]
 description: ${project.description}
-api-version: 1.19
+api-version: 1.20
 permissions:
   ancientruins.basecommand: { description: ancientruins basecommand, default: false }
   ancientruins.version: { description: check version, default: false }
