@@ -7,11 +7,8 @@ import com.i0dev.ancientruins.entity.MLangColl;
 import com.massivecraft.massivecore.MassivePlugin;
 import com.massivecraft.massivecore.collections.MassiveList;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
-import lombok.Getter;
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.scoreboard.Score;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
@@ -46,12 +43,11 @@ public class AncientRuinsPlugin extends MassivePlugin {
 
     public WorldEditPlugin getWorldEdit() {
         Plugin p = Bukkit.getServer().getPluginManager().getPlugin("WorldEdit");
+        
         return p instanceof WorldEditPlugin ? (WorldEditPlugin) p : null;
     }
 
-    @Getter
     Team pinkTeam;
-    @Getter
     long startTime = 0;
 
     @Override
