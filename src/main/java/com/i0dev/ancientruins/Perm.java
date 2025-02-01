@@ -4,7 +4,7 @@ import com.massivecraft.massivecore.Identified;
 import com.massivecraft.massivecore.util.PermissionUtil;
 import org.bukkit.permissions.Permissible;
 
-public enum Perm implements Identi  fied {
+public enum Perm implements Identified {
 
     BASECOMMAND,
 

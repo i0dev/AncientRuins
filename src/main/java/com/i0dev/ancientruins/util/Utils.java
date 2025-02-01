@@ -6,6 +6,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Utils {
 
@@ -14,9 +16,8 @@ public class Utils {
     }
 
     public static String color(String message) {
-        return ChatColor.translateAlternateColorCodes('&', message);
+        return ChatColor.translateAlternateColorCodes('&', translateHex(message));
     }
-
     public static String[] prefixColorFormat(List<String> in, Pair<String, String>... pairs) {
 
         String[] msg = new String[in.size()];
@@ -33,6 +34,19 @@ public class Utils {
             msg = msg.replace(pair.getKey(), pair.getValue());
         }
         return msg;
+    }
+
+    public static String translateHex(String message) {
+        Pattern pattern = Pattern.compile("#[a-fA-F0-9]{6}");
+        Matcher matcher = pattern.matcher(message);
+
+        while (matcher.find()) {
+            String color = message.substring(matcher.start(), matcher.end());
+            message = message.replace(color, String.valueOf(net.md_5.bungee.api.ChatColor.of(color)));
+            matcher = pattern.matcher(message);
+
+        }
+        return message;
     }
 
     /**

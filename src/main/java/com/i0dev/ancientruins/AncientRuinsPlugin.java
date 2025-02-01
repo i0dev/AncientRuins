@@ -7,6 +7,7 @@ import com.i0dev.ancientruins.entity.MLangColl;
 import com.massivecraft.massivecore.MassivePlugin;
 import com.massivecraft.massivecore.collections.MassiveList;
 import com.sk89q.worldedit.bukkit.WorldEditPlugin;
+import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scoreboard.Scoreboard;
@@ -47,6 +48,7 @@ public class AncientRuinsPlugin extends MassivePlugin {
         return p instanceof WorldEditPlugin ? (WorldEditPlugin) p : null;
     }
 
+    @Getter
     Team pinkTeam;
     long startTime = 0;
 
